@@ -5,14 +5,13 @@ import {rxjs/add/operator/map} from '@angular/core';
 @Injectable()
 export class ProductService {
 
-  private string _albumUrl = "../assets/album.json";
+  private _albumUrl = "../assets/album.json";
 
   constructor(private _http: Http) {
-
   }
 
-  public getAlbum(number id){
-     return this.http.get(_albumUrl);
-  }
+   getAlbum(id:number){
+    return this._http.get(this._albumUrl).map((response) => response.json());
+    }
 
 }
