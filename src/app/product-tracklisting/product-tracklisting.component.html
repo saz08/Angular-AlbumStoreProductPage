@@ -1,14 +1,14 @@
 <div class="row tracklisting">
   <ul>
-    <li *ngFor>
+    <li *ngFor='let track of albumInfo?.album.tracks'>
 
       <div class="col-sm-5">
-        <p class="track-number">{{albumInfo?.album.tracks.trackNumber}}</p>
-        <p class="track-name">{{albumInfo?.album.tracks.trackName}}</p>
+        <span class="track-number">{{track.trackNumber}}</span>
+        <span class="track-name">{{track.trackName}}</span>
       </div>
       <div class="col-sm-3 text-right">
-        <p class="track-time">{{albumInfo?.album.track.trackLength}}</p>
-        <p class="price-and-buy">{{albumInfo?.album.track.trackPrice}}</p>
+        <span class="track-time">{{track.trackLength}}</span>
+        <span class="price-and-buy"><button>{{track.trackPrice}}</button></span>
 
       </div>
     </li>
